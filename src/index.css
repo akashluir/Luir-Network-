@@ -1,0 +1,173 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-display: 'Outfit', system-ui, -apple-system, sans-serif;
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-mono: 'IBM Plex Mono', monospace;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #07080c;
+    color: #f3f4f6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    transition: background-color 200ms ease, color 200ms ease;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: var(--font-display);
+    text-wrap: balance;
+  }
+
+  .font-mono-tabular {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Subtle futuristic 3D perspective & orange neon glassmorphism */
+.nami-glass {
+  background: rgba(16, 19, 28, 0.82);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.nami-glass-elevated {
+  background: linear-gradient(145deg, rgba(25, 29, 42, 0.92) 0%, rgba(14, 16, 24, 0.96) 100%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 115, 0, 0.24);
+  box-shadow: 0 20px 50px -15px rgba(0, 0, 0, 0.7), 0 0 32px -8px rgba(255, 107, 0, 0.18);
+}
+
+.nami-card-3d {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  transition: transform 180ms cubic-bezier(0.16, 1, 0.3, 1), border-color 180ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nami-card-3d:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 122, 0, 0.32);
+}
+
+.nami-btn-glow {
+  background: linear-gradient(135deg, #ff6b00 0%, #ff9500 100%);
+  color: #07080c;
+  box-shadow: 0 0 24px rgba(255, 107, 0, 0.38), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+  transition: transform 150ms cubic-bezier(0.16, 1, 0.3, 1), opacity 150ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nami-btn-glow:hover:not(:disabled) {
+  transform: translateY(-1px);
+  opacity: 0.96;
+}
+
+.nami-btn-glow:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+/* =========================================================
+   HIGH CONTRAST LIGHT THEME OVERRIDES (.theme-high-contrast-light)
+   ========================================================= */
+.theme-high-contrast-light {
+  background-color: #f4f6fa !important;
+  color: #0f172a !important;
+}
+
+.theme-high-contrast-light .nami-glass {
+  background: rgba(255, 255, 255, 0.96) !important;
+  border: 1.5px solid #cbd5e1 !important;
+  box-shadow: 0 10px 28px -12px rgba(15, 23, 42, 0.12) !important;
+}
+
+.theme-high-contrast-light .nami-glass-elevated {
+  background: linear-gradient(145deg, #ffffff 0%, #fff7ed 100%) !important;
+  border: 2px solid #ea580c !important;
+  box-shadow: 0 16px 36px -14px rgba(234, 88, 12, 0.2), 0 4px 12px rgba(15, 23, 42, 0.08) !important;
+}
+
+.theme-high-contrast-light .nami-btn-glow {
+  background: linear-gradient(135deg, #ea580c 0%, #d97706 100%) !important;
+  color: #ffffff !important;
+  box-shadow: 0 6px 18px rgba(234, 88, 12, 0.35) !important;
+}
+
+.theme-high-contrast-light .text-white,
+.theme-high-contrast-light .text-slate-100,
+.theme-high-contrast-light .text-slate-200 {
+  color: #0f172a !important;
+}
+
+.theme-high-contrast-light .text-slate-300 {
+  color: #1e293b !important;
+}
+
+.theme-high-contrast-light .text-slate-400,
+.theme-high-contrast-light .text-slate-500 {
+  color: #475569 !important;
+}
+
+.theme-high-contrast-light .text-orange-400,
+.theme-high-contrast-light .text-orange-300 {
+  color: #c2410c !important;
+}
+
+.theme-high-contrast-light .text-amber-300,
+.theme-high-contrast-light .text-amber-200 {
+  color: #b45309 !important;
+}
+
+.theme-high-contrast-light .text-emerald-400 {
+  color: #047857 !important;
+}
+
+.theme-high-contrast-light .border-white\/10,
+.theme-high-contrast-light .border-white\/5,
+.theme-high-contrast-light .border-white\/15 {
+  border-color: #cbd5e1 !important;
+}
+
+.theme-high-contrast-light .divide-white\/10 > :not([hidden]) ~ :not([hidden]) {
+  border-color: #cbd5e1 !important;
+}
+
+.theme-high-contrast-light .bg-\[\#07080c\],
+.theme-high-contrast-light .bg-\[\#0b0d14\],
+.theme-high-contrast-light .bg-\[\#0d1017\],
+.theme-high-contrast-light .bg-\[\#10131c\]\/95 {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+.theme-high-contrast-light .bg-white\/\[0\.01\],
+.theme-high-contrast-light .bg-white\/\[0\.02\],
+.theme-high-contrast-light .bg-white\/\[0\.03\],
+.theme-high-contrast-light .bg-white\/\[0\.04\],
+.theme-high-contrast-light .bg-white\/\[0\.05\],
+.theme-high-contrast-light .bg-white\/\[0\.06\] {
+  background-color: #f1f5f9 !important;
+}
+
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px) rotateX(12deg) rotateY(-12deg);
+  }
+  50% {
+    transform: translateY(-6px) rotateX(16deg) rotateY(-8deg);
+  }
+}
+
+.animate-float-3d {
+  animation: floatSlow 5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-float-3d {
+    animation: none;
+  }
+}

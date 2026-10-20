@@ -1,0 +1,6 @@
+{
+  "name": "NAMI WALLET",
+  "description": "Futuristic Web3 wallet-style dashboard and gamified Node Run points system where users run nodes, complete tasks, and earn NAMI Points.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
